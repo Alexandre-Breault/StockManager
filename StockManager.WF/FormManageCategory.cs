@@ -21,5 +21,12 @@ namespace StockManager.WF
         {
             Close();
         }
+
+        private void buttonAddCategory_Click(object sender, EventArgs e)
+        {
+            FormAddCategory formAddCategory = new FormAddCategory();
+            //Préférez les ShowDialogs pour éviter des conflits de données etc...
+            formAddCategory.ShowDialog();
+        }
     }
 }

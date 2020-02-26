@@ -53,6 +53,7 @@
             this.buttonAddCategory.TabIndex = 1;
             this.buttonAddCategory.Text = "Ajouter une catégorie";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // buttonDelCategory
             // 
