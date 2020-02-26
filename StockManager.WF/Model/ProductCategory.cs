@@ -17,8 +17,9 @@ namespace StockManager.WF.Model
         /// Label de la catégorie
         /// </summary>
         private string _Label;
-
         #endregion
+
+        #region Properties
         /// <summary>
         /// Obtient ou défini l'identifiant d'une catégorie 
         /// </summary>
@@ -35,8 +36,6 @@ namespace StockManager.WF.Model
             get { return _Label; }
             set { _Label = value; }
         }
-        #region Properties
-
         #endregion
     }
 }

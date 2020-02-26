@@ -26,6 +26,7 @@ namespace StockManager.WF.Model
         /// </summary>
         private decimal _Quantity;
         #endregion
+
         #region Properties
         /// <summary>
         /// Obtient ou défini l'identifiant d'un mouvement d'un produit

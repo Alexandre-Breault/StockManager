@@ -28,69 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonManageCategory = new System.Windows.Forms.Button();
+            this.buttonManageExitStock = new System.Windows.Forms.Button();
+            this.buttonManageEntryStock = new System.Windows.Forms.Button();
+            this.buttonManageProduct = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonManageCategory
             // 
-            this.button1.Location = new System.Drawing.Point(42, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Gestion Catégories";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonManageCategory.Location = new System.Drawing.Point(42, 61);
+            this.buttonManageCategory.Name = "buttonManageCategory";
+            this.buttonManageCategory.Size = new System.Drawing.Size(203, 23);
+            this.buttonManageCategory.TabIndex = 0;
+            this.buttonManageCategory.Text = "Gestion Catégories";
+            this.buttonManageCategory.UseVisualStyleBackColor = true;
+            this.buttonManageCategory.Click += new System.EventHandler(this.buttonManageCategory_Click);
             // 
-            // button2
+            // buttonManageExitStock
             // 
-            this.button2.Location = new System.Drawing.Point(42, 184);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(203, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Gestion sorties stock";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonManageExitStock.Location = new System.Drawing.Point(42, 184);
+            this.buttonManageExitStock.Name = "buttonManageExitStock";
+            this.buttonManageExitStock.Size = new System.Drawing.Size(203, 23);
+            this.buttonManageExitStock.TabIndex = 1;
+            this.buttonManageExitStock.Text = "Gestion sorties stock";
+            this.buttonManageExitStock.UseVisualStyleBackColor = true;
+            this.buttonManageExitStock.Click += new System.EventHandler(this.buttonManageExitStock_Click);
             // 
-            // button3
+            // buttonManageEntryStock
             // 
-            this.button3.Location = new System.Drawing.Point(42, 144);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(203, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Gestion entrées stocks";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonManageEntryStock.Location = new System.Drawing.Point(42, 144);
+            this.buttonManageEntryStock.Name = "buttonManageEntryStock";
+            this.buttonManageEntryStock.Size = new System.Drawing.Size(203, 23);
+            this.buttonManageEntryStock.TabIndex = 2;
+            this.buttonManageEntryStock.Text = "Gestion entrées stocks";
+            this.buttonManageEntryStock.UseVisualStyleBackColor = true;
+            this.buttonManageEntryStock.Click += new System.EventHandler(this.buttonManageEntryStock_Click);
             // 
-            // button4
+            // buttonManageProduct
             // 
-            this.button4.Location = new System.Drawing.Point(42, 105);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(203, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Gestion Produits";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonManageProduct.Location = new System.Drawing.Point(42, 105);
+            this.buttonManageProduct.Name = "buttonManageProduct";
+            this.buttonManageProduct.Size = new System.Drawing.Size(203, 23);
+            this.buttonManageProduct.TabIndex = 3;
+            this.buttonManageProduct.Text = "Gestion Produits";
+            this.buttonManageProduct.UseVisualStyleBackColor = true;
+            this.buttonManageProduct.Click += new System.EventHandler(this.buttonManageProduct_Click);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Location = new System.Drawing.Point(713, 415);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(75, 23);
+            this.buttonClose.TabIndex = 4;
+            this.buttonClose.Text = "Quitter";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonClose);
+            this.Controls.Add(this.buttonManageProduct);
+            this.Controls.Add(this.buttonManageEntryStock);
+            this.Controls.Add(this.buttonManageExitStock);
+            this.Controls.Add(this.buttonManageCategory);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "StockManager";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonManageCategory;
+        private System.Windows.Forms.Button buttonManageExitStock;
+        private System.Windows.Forms.Button buttonManageEntryStock;
+        private System.Windows.Forms.Button buttonManageProduct;
+        private System.Windows.Forms.Button buttonClose;
     }
 }
 

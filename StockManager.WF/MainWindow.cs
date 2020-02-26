@@ -16,5 +16,36 @@ namespace StockManager.WF
         {
             InitializeComponent();
         }
+
+        private void buttonManageCategory_Click(object sender, EventArgs e)
+        {
+            FormManageCategory formManageCategory = new FormManageCategory();
+            //Préférez les ShowDialogs pour éviter des conflits de données etc...
+            formManageCategory.ShowDialog();
+        }
+
+        private void buttonManageProduct_Click(object sender, EventArgs e)
+        {
+            FormManageProduct formManageProduct = new FormManageProduct();
+            //Préférez les ShowDialogs pour éviter des conflits de données etc...
+            formManageProduct.ShowDialog();
+        }
+
+        private void buttonManageEntryStock_Click(object sender, EventArgs e)
+        {
+            FormManageEntryStock formManageEntryStock = new FormManageEntryStock();
+            formManageEntryStock.ShowDialog();
+        }
+
+        private void buttonManageExitStock_Click(object sender, EventArgs e)
+        {
+            FormManageExitStock formManageExitStock = new FormManageExitStock();
+            formManageExitStock.ShowDialog();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
