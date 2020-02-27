@@ -42,6 +42,7 @@
             this.buttonAddCategory.TabIndex = 0;
             this.buttonAddCategory.Text = "Ajouter";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
+            this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // listBoxCategory
             // 
@@ -51,6 +52,7 @@
             this.listBoxCategory.Name = "listBoxCategory";
             this.listBoxCategory.Size = new System.Drawing.Size(251, 420);
             this.listBoxCategory.TabIndex = 1;
+            this.listBoxCategory.SelectedIndexChanged += new System.EventHandler(this.listBoxCategory_SelectedIndexChanged);
             // 
             // textBoxAddCategory
             // 
