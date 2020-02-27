@@ -52,6 +52,12 @@
     <Compile Include="FormAddCategory.Designer.cs">
       <DependentUpon>FormAddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDelCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelCategory.Designer.cs">
+      <DependentUpon>FormDelCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManageCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAddCategory.resx">
       <DependentUpon>FormAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelCategory.resx">
+      <DependentUpon>FormDelCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManageCategory.resx">
       <DependentUpon>FormManageCategory.cs</DependentUpon>

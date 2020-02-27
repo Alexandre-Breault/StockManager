@@ -28,5 +28,12 @@ namespace StockManager.WF
             //Préférez les ShowDialogs pour éviter des conflits de données etc...
             formAddCategory.ShowDialog();
         }
+
+        private void buttonDelCategory_Click(object sender, EventArgs e)
+        {
+            FormDelCategory formDelCategory = new FormDelCategory();
+            //Préférez les ShowDialogs pour éviter des conflits de données etc...
+            formDelCategory.ShowDialog();
+        }
     }
 }

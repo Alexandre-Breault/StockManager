@@ -63,6 +63,7 @@
             this.buttonDelCategory.TabIndex = 2;
             this.buttonDelCategory.Text = "Supprimer une catégorie";
             this.buttonDelCategory.UseVisualStyleBackColor = true;
+            this.buttonDelCategory.Click += new System.EventHandler(this.buttonDelCategory_Click);
             // 
             // buttonAddCategoryProduct
             // 
