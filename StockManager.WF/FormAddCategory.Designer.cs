@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.buttonAddCategory = new System.Windows.Forms.Button();
-            this.listBoxCategory = new System.Windows.Forms.ListBox();
             this.textBoxAddCategory = new System.Windows.Forms.TextBox();
             this.labelAddCategory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAddCategory
             // 
-            this.buttonAddCategory.Location = new System.Drawing.Point(420, 188);
+            this.buttonAddCategory.Location = new System.Drawing.Point(269, 215);
             this.buttonAddCategory.Name = "buttonAddCategory";
             this.buttonAddCategory.Size = new System.Drawing.Size(75, 23);
             this.buttonAddCategory.TabIndex = 0;
@@ -44,19 +43,9 @@
             this.buttonAddCategory.UseVisualStyleBackColor = true;
             this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
-            // listBoxCategory
-            // 
-            this.listBoxCategory.BackColor = System.Drawing.SystemColors.Window;
-            this.listBoxCategory.FormattingEnabled = true;
-            this.listBoxCategory.Location = new System.Drawing.Point(12, 12);
-            this.listBoxCategory.Name = "listBoxCategory";
-            this.listBoxCategory.Size = new System.Drawing.Size(251, 420);
-            this.listBoxCategory.TabIndex = 1;
-            this.listBoxCategory.SelectedIndexChanged += new System.EventHandler(this.listBoxCategory_SelectedIndexChanged);
-            // 
             // textBoxAddCategory
             // 
-            this.textBoxAddCategory.Location = new System.Drawing.Point(393, 162);
+            this.textBoxAddCategory.Location = new System.Drawing.Point(269, 158);
             this.textBoxAddCategory.Name = "textBoxAddCategory";
             this.textBoxAddCategory.Size = new System.Drawing.Size(133, 20);
             this.textBoxAddCategory.TabIndex = 2;
@@ -64,7 +53,7 @@
             // labelAddCategory
             // 
             this.labelAddCategory.AutoSize = true;
-            this.labelAddCategory.Location = new System.Drawing.Point(285, 162);
+            this.labelAddCategory.Location = new System.Drawing.Point(266, 122);
             this.labelAddCategory.Name = "labelAddCategory";
             this.labelAddCategory.Size = new System.Drawing.Size(102, 13);
             this.labelAddCategory.TabIndex = 3;
@@ -74,10 +63,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(808, 452);
             this.Controls.Add(this.labelAddCategory);
             this.Controls.Add(this.textBoxAddCategory);
-            this.Controls.Add(this.listBoxCategory);
             this.Controls.Add(this.buttonAddCategory);
             this.Name = "FormAddCategory";
             this.Text = "Ajouter une catégorie";
@@ -89,7 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonAddCategory;
-        private System.Windows.Forms.ListBox listBoxCategory;
         private System.Windows.Forms.TextBox textBoxAddCategory;
         private System.Windows.Forms.Label labelAddCategory;
     }

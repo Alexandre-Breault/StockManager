@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonDelCategory = new System.Windows.Forms.Button();
             this.textBoxDelCategory = new System.Windows.Forms.TextBox();
             this.labelDelCategory = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 426);
-            this.dataGridView1.TabIndex = 0;
             // 
             // buttonClose
             // 
@@ -56,7 +46,7 @@
             // 
             // buttonDelCategory
             // 
-            this.buttonDelCategory.Location = new System.Drawing.Point(452, 186);
+            this.buttonDelCategory.Location = new System.Drawing.Point(401, 189);
             this.buttonDelCategory.Name = "buttonDelCategory";
             this.buttonDelCategory.Size = new System.Drawing.Size(75, 23);
             this.buttonDelCategory.TabIndex = 2;
@@ -66,7 +56,7 @@
             // 
             // textBoxDelCategory
             // 
-            this.textBoxDelCategory.Location = new System.Drawing.Point(426, 160);
+            this.textBoxDelCategory.Location = new System.Drawing.Point(375, 163);
             this.textBoxDelCategory.Name = "textBoxDelCategory";
             this.textBoxDelCategory.Size = new System.Drawing.Size(138, 20);
             this.textBoxDelCategory.TabIndex = 3;
@@ -74,7 +64,7 @@
             // labelDelCategory
             // 
             this.labelDelCategory.AutoSize = true;
-            this.labelDelCategory.Location = new System.Drawing.Point(261, 163);
+            this.labelDelCategory.Location = new System.Drawing.Point(210, 166);
             this.labelDelCategory.Name = "labelDelCategory";
             this.labelDelCategory.Size = new System.Drawing.Size(159, 13);
             this.labelDelCategory.TabIndex = 4;
@@ -89,18 +79,14 @@
             this.Controls.Add(this.textBoxDelCategory);
             this.Controls.Add(this.buttonDelCategory);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "FormDelCategory";
             this.Text = "FormDelCategory";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonDelCategory;
         private System.Windows.Forms.TextBox textBoxDelCategory;
