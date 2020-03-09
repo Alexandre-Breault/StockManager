@@ -28,47 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddCategory));
             this.buttonAddCategory = new System.Windows.Forms.Button();
             this.textBoxAddCategory = new System.Windows.Forms.TextBox();
             this.labelAddCategory = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockManagerDataSetCategory = new StockManager.WF.StockManagerDataSetCategory();
+            this.productCategoryTableAdapter = new StockManager.WF.StockManagerDataSetCategoryTableAdapters.ProductCategoryTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddCategory
             // 
-            this.buttonAddCategory.Location = new System.Drawing.Point(269, 215);
+            resources.ApplyResources(this.buttonAddCategory, "buttonAddCategory");
             this.buttonAddCategory.Name = "buttonAddCategory";
-            this.buttonAddCategory.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddCategory.TabIndex = 0;
-            this.buttonAddCategory.Text = "Ajouter";
             this.buttonAddCategory.UseVisualStyleBackColor = true;
             this.buttonAddCategory.Click += new System.EventHandler(this.buttonAddCategory_Click);
             // 
             // textBoxAddCategory
             // 
-            this.textBoxAddCategory.Location = new System.Drawing.Point(269, 158);
+            resources.ApplyResources(this.textBoxAddCategory, "textBoxAddCategory");
             this.textBoxAddCategory.Name = "textBoxAddCategory";
-            this.textBoxAddCategory.Size = new System.Drawing.Size(133, 20);
-            this.textBoxAddCategory.TabIndex = 2;
             // 
             // labelAddCategory
             // 
-            this.labelAddCategory.AutoSize = true;
-            this.labelAddCategory.Location = new System.Drawing.Point(266, 122);
+            resources.ApplyResources(this.labelAddCategory, "labelAddCategory");
             this.labelAddCategory.Name = "labelAddCategory";
-            this.labelAddCategory.Size = new System.Drawing.Size(102, 13);
-            this.labelAddCategory.TabIndex = 3;
-            this.labelAddCategory.Text = "Nom de la catégorie";
+            // 
+            // buttonClose
+            // 
+            resources.ApplyResources(this.buttonClose, "buttonClose");
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.DataSource = this.productCategoryBindingSource;
+            this.listBox1.DisplayMember = "Label";
+            this.listBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.Name = "listBox1";
+            this.listBox1.ValueMember = "Identifier";
+            // 
+            // productCategoryBindingSource
+            // 
+            this.productCategoryBindingSource.DataMember = "ProductCategory";
+            this.productCategoryBindingSource.DataSource = this.stockManagerDataSetCategory;
+            // 
+            // stockManagerDataSetCategory
+            // 
+            this.stockManagerDataSetCategory.DataSetName = "StockManagerDataSetCategory";
+            this.stockManagerDataSetCategory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productCategoryTableAdapter
+            // 
+            this.productCategoryTableAdapter.ClearBeforeFill = true;
             // 
             // FormAddCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 452);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelAddCategory);
             this.Controls.Add(this.textBoxAddCategory);
             this.Controls.Add(this.buttonAddCategory);
             this.Name = "FormAddCategory";
-            this.Text = "Ajouter une catégorie";
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,5 +112,10 @@
         private System.Windows.Forms.Button buttonAddCategory;
         private System.Windows.Forms.TextBox textBoxAddCategory;
         private System.Windows.Forms.Label labelAddCategory;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.ListBox listBox1;
+        private StockManagerDataSetCategory stockManagerDataSetCategory;
+        private System.Windows.Forms.BindingSource productCategoryBindingSource;
+        private StockManagerDataSetCategoryTableAdapters.ProductCategoryTableAdapter productCategoryTableAdapter;
     }
 }

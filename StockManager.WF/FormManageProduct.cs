@@ -21,5 +21,19 @@ namespace StockManager.WF
         {
             Close();
         }
+
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+            FormAddProduct formAddProduct = new FormAddProduct();
+            //Préférez les ShowDialogs pour éviter des conflits de données etc...
+            formAddProduct.ShowDialog();
+        }
+
+        private void buttonDelProduct_Click(object sender, EventArgs e)
+        {
+            FormDelProduct formDelProduct = new FormDelProduct();
+            //Préférez les ShowDialogs pour éviter des conflits de données etc...
+            formDelProduct.ShowDialog();
+        }
     }
 }

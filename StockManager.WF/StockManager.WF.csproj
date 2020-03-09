@@ -52,11 +52,23 @@
     <Compile Include="FormAddCategory.Designer.cs">
       <DependentUpon>FormAddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddProduct.Designer.cs">
+      <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDelCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDelCategory.Designer.cs">
       <DependentUpon>FormDelCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelProduct.Designer.cs">
+      <DependentUpon>FormDelProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManageCategory.cs">
       <SubType>Form</SubType>
@@ -94,11 +106,35 @@
     <Compile Include="Model\StockMovementProduct.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockManagerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagerDataSetCategory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagerDataSetCategory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagerDataSetProductCategory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockManagerDataSetProductCategory.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAddCategory.resx">
       <DependentUpon>FormAddCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddProduct.fr.resx">
+      <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddProduct.resx">
+      <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDelCategory.resx">
       <DependentUpon>FormDelCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelProduct.resx">
+      <DependentUpon>FormDelProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManageCategory.resx">
       <DependentUpon>FormManageCategory.cs</DependentUpon>
@@ -124,6 +160,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="Properties\DataSources\StockManager.WF.Model.ProductCategory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,6 +173,39 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StockManagerDataSet.xsc">
+      <DependentUpon>StockManagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagerDataSet.xss">
+      <DependentUpon>StockManagerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagerDataSetCategory.xsc">
+      <DependentUpon>StockManagerDataSetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagerDataSetCategory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagerDataSetCategory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagerDataSetCategory.xss">
+      <DependentUpon>StockManagerDataSetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagerDataSetProductCategory.xsc">
+      <DependentUpon>StockManagerDataSetProductCategory.xsd</DependentUpon>
+    </None>
+    <None Include="StockManagerDataSetProductCategory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockManagerDataSetProductCategory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockManagerDataSetProductCategory.xss">
+      <DependentUpon>StockManagerDataSetProductCategory.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

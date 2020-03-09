@@ -15,12 +15,12 @@ namespace StockManager.WF
     public partial class FormAddCategory : Form
     {
 
-        static List<ProductCategory> _ProductCategories = new List<ProductCategory>();
         public static string _ConnectionString = "Server=localhost;Database=StockManager;User Id=sa;Password=Sql2019;";
-        public string ProduitCategorieLabel = "";
+
         public FormAddCategory()
         {
             InitializeComponent();
+            ForceRefreshList();
         }
 
         private void buttonAddCategory_Click(object sender, EventArgs e)
@@ -39,6 +39,19 @@ namespace StockManager.WF
                     textBoxAddCategory.Clear();
                 }
             }
+            ForceRefreshList();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        public void ForceRefreshList()
+        {
+            // TODO: cette ligne de code charge les données dans la table 'stockManagerDataSetCategory.ProductCategory'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.productCategoryTableAdapter.Fill(this.stockManagerDataSetCategory.ProductCategory);
+
         }
 
     }

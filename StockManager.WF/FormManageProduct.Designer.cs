@@ -41,6 +41,7 @@
             this.buttonAddProduct.TabIndex = 0;
             this.buttonAddProduct.Text = "Ajouter un produit";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
             // 
             // buttonDelProduct
             // 
@@ -50,6 +51,7 @@
             this.buttonDelProduct.TabIndex = 1;
             this.buttonDelProduct.Text = "Supprimer un produit";
             this.buttonDelProduct.UseVisualStyleBackColor = true;
+            this.buttonDelProduct.Click += new System.EventHandler(this.buttonDelProduct_Click);
             // 
             // buttonCloseManageProduct
             // 

@@ -80,7 +80,7 @@
             this.buttonDelCategoryProduct.Name = "buttonDelCategoryProduct";
             this.buttonDelCategoryProduct.Size = new System.Drawing.Size(131, 34);
             this.buttonDelCategoryProduct.TabIndex = 5;
-            this.buttonDelCategoryProduct.Text = "Supprimer une catégorie à un produit";
+            this.buttonDelCategoryProduct.Text = "Modifier une catégorie à un produit";
             this.buttonDelCategoryProduct.UseVisualStyleBackColor = true;
             // 
             // FormManageCategory
