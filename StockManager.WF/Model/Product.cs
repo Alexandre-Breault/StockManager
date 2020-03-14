@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManager.WF.Model
 {
-    class Product
+    public class Product
     {
         #region Attributes
         /// <summary>

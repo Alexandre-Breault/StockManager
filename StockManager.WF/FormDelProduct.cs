@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockManager.WF.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,21 +14,38 @@ namespace StockManager.WF
 {
     public partial class FormDelProduct : Form
     {
-        public static string _ConnectionString = "Server=localhost;Database=StockManager;User Id=sa;Password=Sql2019;";
+        public static string _ConnectionString = "Server=localhost\\SQLEXPRESS;Database=AddressBook;integrated security=True;";
+        public static List<Product> _Product = new List<Product>();
 
-        public FormDelProduct()
+        public FormDelProduct(List<Product> products)
         {
+            _Product = products;
             InitializeComponent();
+            listBoxProduct.DataSource = _Product;
+            ForceRefreshList();
         }
-
-        private void FormDelProduct_Load(object sender, EventArgs e)
+        private void listBoxDelCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'stockManagerDataSet.Product'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.productTableAdapter.Fill(this.stockManagerDataSet.Product);
-
+            if (listBoxProduct.SelectedItem is ProductCategory)
+            {
+                textBox1.Text = ((ProductCategory)listBoxProduct.SelectedItem).Label;
+            }
         }
-
+        public void ForceRefreshList()
+        {
+            int selectedIndex = listBoxProduct.SelectedIndex;
+            listBoxProduct.DataSource = null;
+            listBoxProduct.DataSource = _Product;
+            listBoxProduct.DisplayMember = nameof(Product.NameProduct);
+            listBoxProduct.ValueMember = nameof(Product.NameProduct);
+            listBoxProduct.SelectedIndex = selectedIndex;
+        }
         private void buttonDel_Click(object sender, EventArgs e)
+        {
+            Product productToDelete = new Product();
+            ProductDelete(productToDelete);
+        }
+        private static void ProductDelete(Product product)
         {
             using (SqlConnection sqlConnection = new SqlConnection(_ConnectionString))
             {
@@ -36,14 +54,13 @@ namespace StockManager.WF
                 using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
                 {
                     // Requête exécutée
-                    sqlCommand.CommandText = $"DELETE FROM Product WHERE nom = @nom";
+                    sqlCommand.CommandText = $"DELETE FROM Product WHERE Identifier = @Identifier";
                     //Paramètre de notre 
-                    sqlCommand.Parameters.AddWithValue("nom", dataGridViewProduct.CurrentCell);
+                    sqlCommand.Parameters.AddWithValue("nom", (object)product.Identifier ?? DBNull.Value);
                     sqlCommand.ExecuteNonQuery();
                 }
             }
         }
-
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();

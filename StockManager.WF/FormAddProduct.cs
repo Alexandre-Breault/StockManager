@@ -12,21 +12,16 @@ using StockManager.WF.Model;
 
 namespace StockManager.WF
 {
-
     public partial class FormAddProduct : Form
     {
-        public static string _ConnectionString = "Server=localhost;Database=StockManager;Password=Sql2019;User ID=sa;";
-        public FormAddProduct()
+        public static string _ConnectionString = "Server=localhost\\SQLEXPRESS;Database=StockManager;integrated security=True;";
+        public static List<ProductCategory> _ProductCategory = new List<ProductCategory>();
+
+        public FormAddProduct(List<ProductCategory> categories)
         {
+            _ProductCategory = categories;
             InitializeComponent();
-            ForceRefreshList();
-        }
-
-        public void ForceRefreshList()
-        {
-            // TODO: cette ligne de code charge les données dans la table 'stockManagerDataSetCategory.ProductCategory'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.productCategoryTableAdapter.Fill(this.stockManagerDataSetProductCategory.ProductCategory);
-
+            comboBoxCatProd.DataSource = _ProductCategory;
         }
         private void buttonClose_Click_1(object sender, EventArgs e)
         {
@@ -34,6 +29,11 @@ namespace StockManager.WF
         }
 
         private void buttonAddProd_Click(object sender, EventArgs e)
+        {
+            Product productToAdd = new Product();
+            ProductAdd(productToAdd);
+        }
+        private void ProductAdd(Product product)
         {
             using (SqlConnection sqlConnection = new SqlConnection(_ConnectionString))
             {
@@ -58,7 +58,6 @@ namespace StockManager.WF
                     textBoxQuantityStored.Clear();
                 }
             }
-            ForceRefreshList();
         }
     }
 }

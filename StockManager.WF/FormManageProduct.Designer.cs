@@ -35,9 +35,9 @@
             // 
             // buttonAddProduct
             // 
-            this.buttonAddProduct.Location = new System.Drawing.Point(124, 176);
+            this.buttonAddProduct.Location = new System.Drawing.Point(12, 81);
             this.buttonAddProduct.Name = "buttonAddProduct";
-            this.buttonAddProduct.Size = new System.Drawing.Size(249, 100);
+            this.buttonAddProduct.Size = new System.Drawing.Size(135, 45);
             this.buttonAddProduct.TabIndex = 0;
             this.buttonAddProduct.Text = "Ajouter un produit";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // buttonDelProduct
             // 
-            this.buttonDelProduct.Location = new System.Drawing.Point(401, 176);
+            this.buttonDelProduct.Location = new System.Drawing.Point(153, 81);
             this.buttonDelProduct.Name = "buttonDelProduct";
-            this.buttonDelProduct.Size = new System.Drawing.Size(243, 100);
+            this.buttonDelProduct.Size = new System.Drawing.Size(135, 45);
             this.buttonDelProduct.TabIndex = 1;
             this.buttonDelProduct.Text = "Supprimer un produit";
             this.buttonDelProduct.UseVisualStyleBackColor = true;
@@ -55,7 +55,8 @@
             // 
             // buttonCloseManageProduct
             // 
-            this.buttonCloseManageProduct.Location = new System.Drawing.Point(711, 413);
+            this.buttonCloseManageProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCloseManageProduct.Location = new System.Drawing.Point(207, 155);
             this.buttonCloseManageProduct.Name = "buttonCloseManageProduct";
             this.buttonCloseManageProduct.Size = new System.Drawing.Size(75, 23);
             this.buttonCloseManageProduct.TabIndex = 2;
@@ -67,12 +68,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(300, 196);
             this.Controls.Add(this.buttonCloseManageProduct);
             this.Controls.Add(this.buttonDelProduct);
             this.Controls.Add(this.buttonAddProduct);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(316, 235);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(316, 235);
             this.Name = "FormManageProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion des produits";
             this.ResumeLayout(false);
 

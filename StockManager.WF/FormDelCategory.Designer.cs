@@ -35,10 +35,7 @@
             this.labelDelCategory = new System.Windows.Forms.Label();
             this.listBoxDelCategory = new System.Windows.Forms.ListBox();
             this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockManagerDataSetCategory = new StockManager.WF.StockManagerDataSetCategory();
-            this.productCategoryTableAdapter = new StockManager.WF.StockManagerDataSetCategoryTableAdapters.ProductCategoryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonClose
@@ -88,20 +85,7 @@
             this.listBoxDelCategory.Size = new System.Drawing.Size(172, 251);
             this.listBoxDelCategory.TabIndex = 5;
             this.listBoxDelCategory.ValueMember = "Identifier";
-            // 
-            // productCategoryBindingSource
-            // 
-            this.productCategoryBindingSource.DataMember = "ProductCategory";
-            this.productCategoryBindingSource.DataSource = this.stockManagerDataSetCategory;
-            // 
-            // stockManagerDataSetCategory
-            // 
-            this.stockManagerDataSetCategory.DataSetName = "StockManagerDataSetCategory";
-            this.stockManagerDataSetCategory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productCategoryTableAdapter
-            // 
-            this.productCategoryTableAdapter.ClearBeforeFill = true;
+            this.listBoxDelCategory.SelectedIndexChanged += new System.EventHandler(this.listBoxDelCategory_SelectedIndexChanged);
             // 
             // FormDelCategory
             // 
@@ -113,13 +97,13 @@
             this.Controls.Add(this.textBoxDelCategory);
             this.Controls.Add(this.buttonDelCategory);
             this.Controls.Add(this.buttonClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximumSize = new System.Drawing.Size(521, 318);
             this.MinimumSize = new System.Drawing.Size(521, 318);
             this.Name = "FormDelCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDelCategory";
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,7 +116,6 @@
         private System.Windows.Forms.Label labelDelCategory;
         private System.Windows.Forms.ListBox listBoxDelCategory;
         private System.Windows.Forms.BindingSource productCategoryBindingSource;
-        private StockManagerDataSetCategory stockManagerDataSetCategory;
-        private StockManagerDataSetCategoryTableAdapters.ProductCategoryTableAdapter productCategoryTableAdapter;
+
     }
 }

@@ -44,11 +44,8 @@
             this.textBoxQuantityStored = new System.Windows.Forms.TextBox();
             this.comboBoxCatProd = new System.Windows.Forms.ComboBox();
             this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockManagerDataSetProductCategory = new StockManager.WF.StockManagerDataSetProductCategory();
-            this.productCategoryTableAdapter = new StockManager.WF.StockManagerDataSetProductCategoryTableAdapters.ProductCategoryTableAdapter();
             this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetProductCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddProd
@@ -123,20 +120,6 @@
             this.comboBoxCatProd.Tag = "Test";
             this.comboBoxCatProd.ValueMember = "Identifier";
             // 
-            // productCategoryBindingSource
-            // 
-            this.productCategoryBindingSource.DataMember = "ProductCategory";
-            this.productCategoryBindingSource.DataSource = this.stockManagerDataSetProductCategory;
-            // 
-            // stockManagerDataSetProductCategory
-            // 
-            this.stockManagerDataSetProductCategory.DataSetName = "StockManagerDataSetProductCategory";
-            this.stockManagerDataSetProductCategory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productCategoryTableAdapter
-            // 
-            this.productCategoryTableAdapter.ClearBeforeFill = true;
-            // 
             // buttonClose
             // 
             resources.ApplyResources(this.buttonClose, "buttonClose");
@@ -162,9 +145,9 @@
             this.Controls.Add(this.labelRefProd);
             this.Controls.Add(this.labelNameProduct);
             this.Controls.Add(this.buttonAddProd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormAddProduct";
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetProductCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,9 +168,7 @@
         private System.Windows.Forms.TextBox textBoxDescProd;
         private System.Windows.Forms.TextBox textBoxQuantityStored;
         private System.Windows.Forms.ComboBox comboBoxCatProd;
-        private StockManagerDataSetProductCategory stockManagerDataSetProductCategory;
         private System.Windows.Forms.BindingSource productCategoryBindingSource;
-        private StockManagerDataSetProductCategoryTableAdapters.ProductCategoryTableAdapter productCategoryTableAdapter;
         private System.Windows.Forms.Button buttonClose;
     }
 }

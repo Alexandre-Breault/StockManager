@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockManager.WF.Model
 {
-    class ProductCategory
+    public class ProductCategory
     {
         #region Attributes
         /// <summary>
@@ -36,6 +36,15 @@ namespace StockManager.WF.Model
             get { return _Label; }
             set { _Label = value; }
         }
+        /// <summary>
+        /// Retourne le nom complet à afficher
+        /// /!\ en lecture seule
+        /// </summary>
+        public string FullName
+        {
+            get { return _Label; }
+        }
+
         #endregion
     }
 }

@@ -36,10 +36,7 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockManagerDataSetCategory = new StockManager.WF.StockManagerDataSetCategory();
-            this.productCategoryTableAdapter = new StockManager.WF.StockManagerDataSetCategoryTableAdapters.ProductCategoryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddCategory
@@ -68,26 +65,10 @@
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.productCategoryBindingSource;
-            this.listBox1.DisplayMember = "Label";
             this.listBox1.FormattingEnabled = true;
             resources.ApplyResources(this.listBox1, "listBox1");
             this.listBox1.Name = "listBox1";
-            this.listBox1.ValueMember = "Identifier";
-            // 
-            // productCategoryBindingSource
-            // 
-            this.productCategoryBindingSource.DataMember = "ProductCategory";
-            this.productCategoryBindingSource.DataSource = this.stockManagerDataSetCategory;
-            // 
-            // stockManagerDataSetCategory
-            // 
-            this.stockManagerDataSetCategory.DataSetName = "StockManagerDataSetCategory";
-            this.stockManagerDataSetCategory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productCategoryTableAdapter
-            // 
-            this.productCategoryTableAdapter.ClearBeforeFill = true;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // FormAddCategory
             // 
@@ -99,9 +80,9 @@
             this.Controls.Add(this.labelAddCategory);
             this.Controls.Add(this.textBoxAddCategory);
             this.Controls.Add(this.buttonAddCategory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormAddCategory";
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockManagerDataSetCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,8 +95,6 @@
         private System.Windows.Forms.Label labelAddCategory;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.ListBox listBox1;
-        private StockManagerDataSetCategory stockManagerDataSetCategory;
         private System.Windows.Forms.BindingSource productCategoryBindingSource;
-        private StockManagerDataSetCategoryTableAdapters.ProductCategoryTableAdapter productCategoryTableAdapter;
     }
 }

@@ -15,11 +15,14 @@ namespace StockManager.WF
 {
     public partial class FormDelCategory : Form
     {
-        public static string _ConnectionString = "Server=localhost;Database=StockManager;User Id=sa;Password=Sql2019;";
-        List<ProductCategory> productCategory = new List<ProductCategory>();
-        public FormDelCategory()
+        public static string _ConnectionString = "Server=localhost\\SQLEXPRESS;Database=StockManager;integrated security=True;";
+        public static List<ProductCategory> _ProductCategory = new List<ProductCategory>();
+
+        public FormDelCategory(List<ProductCategory> categories)
         {
+            _ProductCategory = categories;
             InitializeComponent();
+            listBoxDelCategory.DataSource = _ProductCategory;
             ForceRefreshList();
         }
 
@@ -44,13 +47,23 @@ namespace StockManager.WF
                     textBoxDelCategory.Clear();
                 }
             }
-            ForceRefreshList();
         }
         public void ForceRefreshList()
         {
-            // TODO: cette ligne de code charge les données dans la table 'stockManagerDataSetCategory.ProductCategory'. Vous pouvez la déplacer ou la supprimer selon les besoins.
-            this.productCategoryTableAdapter.Fill(this.stockManagerDataSetCategory.ProductCategory);
+            int selectedIndex = listBoxDelCategory.SelectedIndex;
+            listBoxDelCategory.DataSource = null;
+            listBoxDelCategory.DataSource = _ProductCategory;
+            listBoxDelCategory.DisplayMember = nameof(ProductCategory.Label);
+            listBoxDelCategory.ValueMember = nameof(ProductCategory.Label);
+            listBoxDelCategory.SelectedIndex = selectedIndex;
+        }
 
+        private void listBoxDelCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxDelCategory.SelectedItem is ProductCategory)
+            {
+                textBoxDelCategory.Text = ((ProductCategory)listBoxDelCategory.SelectedItem).Label;
+            }
         }
     }
 }
