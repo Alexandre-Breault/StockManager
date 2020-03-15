@@ -43,10 +43,10 @@
             this.textBoxDescProd = new System.Windows.Forms.TextBox();
             this.textBoxQuantityStored = new System.Windows.Forms.TextBox();
             this.comboBoxCatProd = new System.Windows.Forms.ComboBox();
-            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonCloseProduct = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
+            this.errorProviderAddProduct = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddProd
@@ -113,8 +113,7 @@
             // 
             // comboBoxCatProd
             // 
-            this.comboBoxCatProd.DataSource = this.productCategoryBindingSource;
-            this.comboBoxCatProd.DisplayMember = "Label";
+            this.comboBoxCatProd.DisplayMember = "Identifier";
             this.comboBoxCatProd.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxCatProd, "comboBoxCatProd");
             this.comboBoxCatProd.Name = "comboBoxCatProd";
@@ -126,7 +125,6 @@
             resources.ApplyResources(this.buttonClose, "buttonClose");
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click_1);
             // 
             // buttonCloseProduct
             // 
@@ -134,6 +132,10 @@
             this.buttonCloseProduct.Name = "buttonCloseProduct";
             this.buttonCloseProduct.UseVisualStyleBackColor = true;
             this.buttonCloseProduct.Click += new System.EventHandler(this.buttonCloseProduct_Click);
+            // 
+            // errorProviderAddProduct
+            // 
+            this.errorProviderAddProduct.ContainerControl = this;
             // 
             // FormAddProduct
             // 
@@ -156,7 +158,7 @@
             this.Controls.Add(this.buttonAddProd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "FormAddProduct";
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAddProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,8 +179,8 @@
         private System.Windows.Forms.TextBox textBoxDescProd;
         private System.Windows.Forms.TextBox textBoxQuantityStored;
         private System.Windows.Forms.ComboBox comboBoxCatProd;
-        private System.Windows.Forms.BindingSource productCategoryBindingSource;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonCloseProduct;
+        private System.Windows.Forms.ErrorProvider errorProviderAddProduct;
     }
 }

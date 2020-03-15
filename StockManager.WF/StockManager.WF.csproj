@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModCategory.Designer.cs">
+      <DependentUpon>FormModCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     <Compile Include="FormManageProduct.Designer.cs">
       <DependentUpon>FormManageProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormModProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModProd.Designer.cs">
+      <DependentUpon>FormModProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManageProduct.resx">
       <DependentUpon>FormManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModCategory.resx">
+      <DependentUpon>FormModCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModProd.resx">
+      <DependentUpon>FormModProd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

@@ -31,6 +31,7 @@
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonAddCategory = new System.Windows.Forms.Button();
             this.buttonDelCategory = new System.Windows.Forms.Button();
+            this.buttonModCatProd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonReturn
@@ -46,7 +47,7 @@
             // 
             // buttonAddCategory
             // 
-            this.buttonAddCategory.Location = new System.Drawing.Point(12, 77);
+            this.buttonAddCategory.Location = new System.Drawing.Point(12, 48);
             this.buttonAddCategory.Name = "buttonAddCategory";
             this.buttonAddCategory.Size = new System.Drawing.Size(135, 45);
             this.buttonAddCategory.TabIndex = 1;
@@ -57,7 +58,7 @@
             // buttonDelCategory
             // 
             this.buttonDelCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonDelCategory.Location = new System.Drawing.Point(153, 77);
+            this.buttonDelCategory.Location = new System.Drawing.Point(153, 48);
             this.buttonDelCategory.Name = "buttonDelCategory";
             this.buttonDelCategory.Size = new System.Drawing.Size(135, 45);
             this.buttonDelCategory.TabIndex = 2;
@@ -65,11 +66,22 @@
             this.buttonDelCategory.UseVisualStyleBackColor = true;
             this.buttonDelCategory.Click += new System.EventHandler(this.buttonDelCategory_Click);
             // 
+            // buttonModCatProd
+            // 
+            this.buttonModCatProd.Location = new System.Drawing.Point(80, 99);
+            this.buttonModCatProd.Name = "buttonModCatProd";
+            this.buttonModCatProd.Size = new System.Drawing.Size(135, 45);
+            this.buttonModCatProd.TabIndex = 3;
+            this.buttonModCatProd.Text = "Modifier une catégorie";
+            this.buttonModCatProd.UseVisualStyleBackColor = true;
+            this.buttonModCatProd.Click += new System.EventHandler(this.buttonModCatProd_Click);
+            // 
             // FormManageCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 196);
+            this.Controls.Add(this.buttonModCatProd);
             this.Controls.Add(this.buttonDelCategory);
             this.Controls.Add(this.buttonAddCategory);
             this.Controls.Add(this.buttonReturn);
@@ -90,5 +102,6 @@
         private System.Windows.Forms.Button buttonReturn;
         private System.Windows.Forms.Button buttonAddCategory;
         private System.Windows.Forms.Button buttonDelCategory;
+        private System.Windows.Forms.Button buttonModCatProd;
     }
 }

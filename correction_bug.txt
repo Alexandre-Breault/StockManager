@@ -1,0 +1,10 @@
+Bug n°1:
+Dupplication des noms de catégorie à chaque fois qu'on ouvrait une fenêtre pour ouvrir l'ajouts ou la suppression des catégories
+Solution: clear ce qui est dans _Catégories
+-----------------------
+Bug n°2:
+Même problème que pour les produits et solutions identique sauf clear de _Product
+--------------
+Bug n°3:
+Problème dans la liste pour afficher les catégories et les produits lors de la suppression qui faisait planter l'application
+Solution : creer un fonction ForceDeleteList qui supprime l'article supprimer avec la requête SQL

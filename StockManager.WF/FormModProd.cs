@@ -1,24 +1,23 @@
-﻿using System;
+﻿using StockManager.WF.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; //ADO.Net (connecteur SQL Server)
-using StockManager.WF.Model;
 
 namespace StockManager.WF
 {
-    public partial class FormAddProduct : Form
+    public partial class FormModProd : Form
     {
         public static string _ConnectionString = "Server=localhost\\SQLEXPRESS;Database=StockManager;integrated security=True;";
         public static List<ProductCategory> _Category = new List<ProductCategory>();
         public static List<Product> _Product = new List<Product>();
-
-        public FormAddProduct()
+        public FormModProd()
         {
             using (SqlConnection sqlConnection = new SqlConnection(_ConnectionString))
             {
@@ -29,6 +28,7 @@ namespace StockManager.WF
             InitializeComponent();
             comboBoxCatProd.DataSource = _Category;
             ForceRefreshCombox();
+            ForceRefreshList();
         }
         /// <summary>
         /// Récupère dans la table produit l'identifiant , le nom , la référence
@@ -39,7 +39,7 @@ namespace StockManager.WF
             using (SqlCommand command = sqlConnection.CreateCommand())
             {
                 //On préciser le texte de la commande
-                command.CommandText = "SELECT Identifier, Nom , Reference FROM Product";
+                command.CommandText = "SELECT Identifier, Nom, Price, StoredQuantity  FROM Product";
                 //On exécute la requête et on obtient un SqlDataReader
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -56,7 +56,11 @@ namespace StockManager.WF
                         }
                         if (!reader.IsDBNull(2))
                         {
-                            product.ReferenceProduct = reader.GetString(2);  //Lecture d'une chaîne
+                            product.PriceProduct = reader.GetDecimal(2);  //Lecture d'une chaîne
+                        }
+                        if (!reader.IsDBNull(3))
+                        {
+                            product.StoredQuantity = reader.GetDecimal(3);  //Lecture d'une chaîne
                         }
                     }
                 }
@@ -105,53 +109,59 @@ namespace StockManager.WF
             comboBoxCatProd.ValueMember = nameof(ProductCategory.Identifier);
             comboBoxCatProd.SelectedIndex = selectedIndex;
         }
-        private void buttonAddProd_Click(object sender, EventArgs e)
-        {
-            ProductAdd();
-        }
         /// <summary>
-        /// Insert un produit dans la table produit avec un nom, une référence , un prix ,une description , un identifiant d'une catégorie et la quantité stockée
+        /// Rafraîchit la listbox
         /// </summary>
-        private void ProductAdd()
+        public void ForceRefreshList()
         {
-            if (!_Product.Exists(product => (product.NameProduct==textBoxNameProd.Text)))
-            {
-                using (SqlConnection sqlConnection = new SqlConnection(_ConnectionString))
-                {
-                    sqlConnection.Open(); //On ouvre la connexion
-
-                    using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
-                    {
-                        // Requête exécutée
-                        sqlCommand.CommandText = $"INSERT INTO Product([Nom],[Reference],[Price],[Description],[IdentifierProductCategory],[StoredQuantity]) VALUES (@Nom , @Reference , @Price , @Description , @IdentifiantProductCategory , @StoredQuantity)";
-                        //Paramètre de notre 
-                        sqlCommand.Parameters.AddWithValue("Nom", textBoxNameProd.Text);
-                        sqlCommand.Parameters.AddWithValue("Reference", textBoxRefProd.Text);
-                        sqlCommand.Parameters.AddWithValue("Price", textBoxPriceProd.Text);
-                        sqlCommand.Parameters.AddWithValue("IdentifiantProductCategory", comboBoxCatProd.SelectedValue);
-                        sqlCommand.Parameters.AddWithValue("Description", textBoxDescProd.Text);
-                        sqlCommand.Parameters.AddWithValue("StoredQuantity", textBoxQuantityStored.Text);
-                        sqlCommand.ExecuteNonQuery();
-                        textBoxNameProd.Clear();
-                        textBoxRefProd.Clear();
-                        textBoxPriceProd.Clear();
-                        textBoxDescProd.Clear();
-                        textBoxQuantityStored.Clear();
-                    }
-                }
-            }
-            else
-            {
-                errorProviderAddProduct.SetError(textBoxNameProd,"Le nom de produit existe déjà");
-            }
-            
+            int selectedIndex = listBox1.SelectedIndex;
+            listBox1.DataSource = null;
+            listBox1.DataSource = _Product;
+            listBox1.DisplayMember = nameof(Product.NameProduct);
+            listBox1.ValueMember = nameof(Product.Identifier);
+            listBox1.SelectedIndex = selectedIndex;
         }
-
         private void buttonCloseProduct_Click(object sender, EventArgs e)
         {
             comboBoxCatProd.DataSource = null;
             _Category.Clear();
             Close();
+        }
+
+        private void buttonAddProd_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(_ConnectionString))
+            {
+                sqlConnection.Open(); //On ouvre la connexion
+
+                using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
+                {
+                    // Requête exécutée
+                    sqlCommand.CommandText = $"UPDATE Product SET " + $"[Nom] = @Nom " + $"[Price] = @Price " + $"[IdentifiantProductCategory] = @IdentifiantProductCategory " + $"[StoredQuantity] = @StoredQuantity " + $"WHERE [Identifier] = @Identifier ";
+                    //Paramètre de notre 
+                    sqlCommand.Parameters.AddWithValue("Nom", textBoxNameProd.Text);
+                    sqlCommand.Parameters.AddWithValue("Price", textBoxPriceProd.Text);
+                    sqlCommand.Parameters.AddWithValue("IdentifiantProductCategory", comboBoxCatProd.SelectedValue);
+                    sqlCommand.Parameters.AddWithValue("StoredQuantity", textBoxQuantityStored.Text);
+                    sqlCommand.Parameters.AddWithValue("Identifier", listBox1.SelectedValue);
+                    sqlCommand.ExecuteNonQuery();
+                    textBoxNameProd.Clear();
+                    textBoxPriceProd.Clear();
+                    textBoxQuantityStored.Clear();
+                }
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is Product)
+            {
+                //ajoute dans la textbox l'article sélection dans la liste
+                textBoxNameProd.Text = ((Product)listBox1.SelectedItem).NameProduct;
+                textBoxPriceProd.Text = ((Product)listBox1.SelectedItem).PriceProduct.ToString();
+                textBoxQuantityStored.Text = ((Product)listBox1.SelectedItem).StoredQuantity.ToString();
+            }
+
         }
     }
 }

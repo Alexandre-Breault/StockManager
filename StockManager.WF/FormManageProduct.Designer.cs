@@ -31,11 +31,12 @@
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.buttonDelProduct = new System.Windows.Forms.Button();
             this.buttonCloseManageProduct = new System.Windows.Forms.Button();
+            this.buttonModProd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAddProduct
             // 
-            this.buttonAddProduct.Location = new System.Drawing.Point(12, 81);
+            this.buttonAddProduct.Location = new System.Drawing.Point(12, 52);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(135, 45);
             this.buttonAddProduct.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // buttonDelProduct
             // 
-            this.buttonDelProduct.Location = new System.Drawing.Point(153, 81);
+            this.buttonDelProduct.Location = new System.Drawing.Point(153, 52);
             this.buttonDelProduct.Name = "buttonDelProduct";
             this.buttonDelProduct.Size = new System.Drawing.Size(135, 45);
             this.buttonDelProduct.TabIndex = 1;
@@ -64,11 +65,22 @@
             this.buttonCloseManageProduct.UseVisualStyleBackColor = true;
             this.buttonCloseManageProduct.Click += new System.EventHandler(this.buttonCloseManageProduct_Click_1);
             // 
+            // buttonModProd
+            // 
+            this.buttonModProd.Location = new System.Drawing.Point(85, 103);
+            this.buttonModProd.Name = "buttonModProd";
+            this.buttonModProd.Size = new System.Drawing.Size(135, 45);
+            this.buttonModProd.TabIndex = 4;
+            this.buttonModProd.Text = "Modifier un produit";
+            this.buttonModProd.UseVisualStyleBackColor = true;
+            this.buttonModProd.Click += new System.EventHandler(this.buttonModProd_Click);
+            // 
             // FormManageProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 196);
+            this.Controls.Add(this.buttonModProd);
             this.Controls.Add(this.buttonCloseManageProduct);
             this.Controls.Add(this.buttonDelProduct);
             this.Controls.Add(this.buttonAddProduct);
@@ -89,5 +101,6 @@
         private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.Button buttonDelProduct;
         private System.Windows.Forms.Button buttonCloseManageProduct;
+        private System.Windows.Forms.Button buttonModProd;
     }
 }

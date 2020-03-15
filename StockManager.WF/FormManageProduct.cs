@@ -35,7 +35,7 @@ namespace StockManager.WF
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
-            FormAddProduct formAddProduct = new FormAddProduct(_ProductCategory);
+            FormAddProduct formAddProduct = new FormAddProduct();
             //Préférez les ShowDialogs pour éviter des conflits de données etc...
             formAddProduct.ShowDialog();
         }
@@ -77,6 +77,13 @@ namespace StockManager.WF
                     }
                 }
             }
+        }
+
+        private void buttonModProd_Click(object sender, EventArgs e)
+        {
+            FormModProd formModProduct = new FormModProd();
+            //Préférez les ShowDialogs pour éviter des conflits de données etc...
+            formModProduct.ShowDialog();
         }
     }
 }

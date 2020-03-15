@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonCloseManageEntryStock = new System.Windows.Forms.Button();
             this.labelNameProduct = new System.Windows.Forms.Label();
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
@@ -38,6 +39,8 @@
             this.labelEmployeeCode = new System.Windows.Forms.Label();
             this.textBoxCodeEmployee = new System.Windows.Forms.TextBox();
             this.buttonModify = new System.Windows.Forms.Button();
+            this.errorProviderQuantité = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderQuantité)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCloseManageEntryStock
@@ -126,6 +129,10 @@
             this.buttonModify.UseVisualStyleBackColor = true;
             this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
+            // errorProviderQuantité
+            // 
+            this.errorProviderQuantité.ContainerControl = this;
+            // 
             // FormManageEntryStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +155,7 @@
             this.Name = "FormManageEntryStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion entrées stocks";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderQuantité)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +173,6 @@
         private System.Windows.Forms.Label labelEmployeeCode;
         private System.Windows.Forms.TextBox textBoxCodeEmployee;
         private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.ErrorProvider errorProviderQuantité;
     }
 }

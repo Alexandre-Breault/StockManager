@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonCloseManageExitStock = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.textBoxCodeEmployee = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.labelNameProduct = new System.Windows.Forms.Label();
             this.buttonCloseManageEntryStock = new System.Windows.Forms.Button();
+            this.errorProviderQuantité = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderQuantité)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCloseManageExitStock
@@ -98,6 +101,7 @@
             this.textBoxQuantity.Name = "textBoxQuantity";
             this.textBoxQuantity.Size = new System.Drawing.Size(200, 20);
             this.textBoxQuantity.TabIndex = 15;
+            this.textBoxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxQuantity_KeyPress);
             // 
             // labelQuantity
             // 
@@ -136,6 +140,10 @@
             this.buttonCloseManageEntryStock.UseVisualStyleBackColor = true;
             this.buttonCloseManageEntryStock.Click += new System.EventHandler(this.buttonCloseManageEntryStock_Click);
             // 
+            // errorProviderQuantité
+            // 
+            this.errorProviderQuantité.ContainerControl = this;
+            // 
             // FormManageExitStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +166,7 @@
             this.Name = "FormManageExitStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestion sorties stocks";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderQuantité)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +185,6 @@
         private System.Windows.Forms.ComboBox comboBoxProduct;
         private System.Windows.Forms.Label labelNameProduct;
         private System.Windows.Forms.Button buttonCloseManageEntryStock;
+        private System.Windows.Forms.ErrorProvider errorProviderQuantité;
     }
 }

@@ -42,7 +42,7 @@ namespace StockManager.WF
             using (SqlCommand command = sqlConnection.CreateCommand())
             {
                 //On préciser le texte de la commande
-                command.CommandText = "SELECT Identifier, Nom , Reference FROM Product";
+                command.CommandText = "SELECT Identifier, Nom , StoredQuantity FROM Product";
                 //On exécute la requête et on obtient un SqlDataReader
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -59,7 +59,7 @@ namespace StockManager.WF
                         }
                         if (!reader.IsDBNull(2))
                         {
-                            product.ReferenceProduct = reader.GetString(2);  //Lecture d'une chaîne
+                            product.StoredQuantity = reader.GetDecimal(2);  //Lecture d'une chaîne
                         }
                     }
                 }
@@ -85,6 +85,7 @@ namespace StockManager.WF
                     sqlCommand.Parameters.AddWithValue("EmployeeCode", textBoxCodeEmployee.Text);
                     sqlCommand.Parameters.AddWithValue("IsStockEntry", "0");
                     sqlCommand.ExecuteNonQuery();
+                    textBoxCodeEmployee.Clear();
                 }
                 using (SqlCommand command = sqlConnection.CreateCommand())
                 {
@@ -106,15 +107,27 @@ namespace StockManager.WF
                     using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
                     {
                         // Requête exécutée
-                        sqlCommand.CommandText = $"INSERT INTO StockMovementProduct([IdentifierProduct],[IdentifierStockMovement],[Quantity]) VALUES (@IdentifierProduct,@IdentifierStockMovement,@Quantity)";
+                        sqlCommand.CommandText = $"INSERT INTO StockMovementProduct([IdentifierProduct],[IdentifierStockMovement]) VALUES (@IdentifierProduct,@IdentifierStockMovement)";
                         //Paramètre de notre 
                         sqlCommand.Parameters.AddWithValue("IdentifierProduct", comboBoxProduct.SelectedValue);
                         sqlCommand.Parameters.AddWithValue("IdentifierStockMovement", stock);
-                        sqlCommand.Parameters.AddWithValue("Quantity", textBoxQuantity.Text);
                         sqlCommand.ExecuteNonQuery();
+                        textBoxQuantity.Clear();
                     }
                 }
             }
+        }
+        private void textBoxQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

@@ -33,7 +33,7 @@ namespace StockManager.WF
             using (SqlCommand command = sqlConnection.CreateCommand())
             {
                 //On préciser le texte de la commande
-                command.CommandText = "SELECT Identifier, Nom , Reference FROM Product";
+                command.CommandText = "SELECT Identifier, Nom , StoredQuantity FROM Product";
                 //On exécute la requête et on obtient un SqlDataReader
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -50,7 +50,7 @@ namespace StockManager.WF
                         }
                         if (!reader.IsDBNull(2))
                         {
-                            product.ReferenceProduct = reader.GetString(2);  //Lecture d'une chaîne
+                            product.StoredQuantity = reader.GetDecimal(2);  //Lecture d'un decimal
                         }
                     }
                 }
@@ -116,6 +116,34 @@ namespace StockManager.WF
                         sqlCommand.Parameters.AddWithValue("IdentifierProduct", comboBoxProduct.SelectedValue);
                         sqlCommand.Parameters.AddWithValue("IdentifierStockMovement", stock);
                         sqlCommand.Parameters.AddWithValue("Quantity", textBoxQuantity.Text);
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                }
+                using (SqlCommand command = sqlConnection.CreateCommand())
+                {
+                    command.CommandText = "SELECT StoredQuantity FROM Product";
+                    //On exécute la requête et on obtient un SqlDataReader
+                    using (SqlDataReader readerPro = command.ExecuteReader())
+                    {
+                        decimal quantite = 0;
+                        //Tant qu'il y a des résultats, on passe au suivant
+                        while (readerPro.Read())
+                        {
+                            Product product = new Product();
+                            _Product.Add(product);
+                            product.StoredQuantity = readerPro.GetDecimal(0);
+                            quantite = product.StoredQuantity;
+                        }
+                    }
+                    using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
+                    {
+                        string txtBoxValue = textBoxQuantity.Text;
+                        decimal amount;
+                        bool parsedOk = decimal.TryParse(txtBoxValue, out amount);
+                        sqlCommand.CommandText = $"UPDATE Product SET " + $"[StoredQuantity] = @StoredQuantity " + $"WHERE [Identifier] = @Identifier ";
+                        //Paramètre de notre 
+                        sqlCommand.Parameters.AddWithValue("StoredQuantity", amount);
+                        sqlCommand.Parameters.AddWithValue("Identifier", comboBoxProduct.SelectedValue);
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
