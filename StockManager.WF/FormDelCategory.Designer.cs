@@ -41,7 +41,7 @@
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.Location = new System.Drawing.Point(418, 244);
+            this.buttonClose.Location = new System.Drawing.Point(351, 244);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 1;
@@ -77,29 +77,26 @@
             // 
             // listBoxDelCategory
             // 
-            this.listBoxDelCategory.DataSource = this.productCategoryBindingSource;
-            this.listBoxDelCategory.DisplayMember = "Label";
             this.listBoxDelCategory.FormattingEnabled = true;
-            this.listBoxDelCategory.Location = new System.Drawing.Point(229, 12);
+            this.listBoxDelCategory.Location = new System.Drawing.Point(173, 16);
             this.listBoxDelCategory.Name = "listBoxDelCategory";
             this.listBoxDelCategory.Size = new System.Drawing.Size(172, 251);
             this.listBoxDelCategory.TabIndex = 5;
-            this.listBoxDelCategory.ValueMember = "Identifier";
             this.listBoxDelCategory.SelectedIndexChanged += new System.EventHandler(this.listBoxDelCategory_SelectedIndexChanged);
             // 
             // FormDelCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 279);
+            this.ClientSize = new System.Drawing.Size(435, 279);
             this.Controls.Add(this.listBoxDelCategory);
             this.Controls.Add(this.labelDelCategory);
             this.Controls.Add(this.textBoxDelCategory);
             this.Controls.Add(this.buttonDelCategory);
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MaximumSize = new System.Drawing.Size(521, 318);
-            this.MinimumSize = new System.Drawing.Size(521, 318);
+            this.MaximumSize = new System.Drawing.Size(451, 318);
+            this.MinimumSize = new System.Drawing.Size(451, 318);
             this.Name = "FormDelCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormDelCategory";

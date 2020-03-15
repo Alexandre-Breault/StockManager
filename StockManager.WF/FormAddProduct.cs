@@ -30,10 +30,12 @@ namespace StockManager.WF
 
         private void buttonAddProd_Click(object sender, EventArgs e)
         {
-            Product productToAdd = new Product();
-            ProductAdd(productToAdd);
+            ProductAdd();
         }
-        private void ProductAdd(Product product)
+        /// <summary>
+        /// Insert un produit dans la table produit avec un nom, une référence , un prix ,une description , un identifiant d'une catégorie et la quantité stockée
+        /// </summary>
+        private void ProductAdd()
         {
             using (SqlConnection sqlConnection = new SqlConnection(_ConnectionString))
             {
@@ -58,6 +60,12 @@ namespace StockManager.WF
                     textBoxQuantityStored.Clear();
                 }
             }
+        }
+
+        private void buttonCloseProduct_Click(object sender, EventArgs e)
+        {
+            _ProductCategory.Clear();
+            Close();
         }
     }
 }

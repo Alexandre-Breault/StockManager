@@ -25,7 +25,6 @@ namespace StockManager.WF
             {
                 sqlConnection.Open(); //On ouvre la connexion
                 GetCategory(sqlConnection);
-                GetProduct(sqlConnection);
             }
         }
 
@@ -43,10 +42,14 @@ namespace StockManager.WF
 
         private void buttonDelProduct_Click(object sender, EventArgs e)
         {
-            FormDelProduct formDelProduct = new FormDelProduct(_Product);
+            FormDelProduct formDelProduct = new FormDelProduct();
             //Préférez les ShowDialogs pour éviter des conflits de données etc...
             formDelProduct.ShowDialog();
         }
+        /// <summary>
+        /// Récupère dans la table ProductCategory l'identifiant et le label de la catégorie
+        /// </summary>
+        /// <param name="sqlConnection">String de connection à la base de donnée</param>
         private void GetCategory(SqlConnection sqlConnection)
         {
             using (SqlCommand command = sqlConnection.CreateCommand())
@@ -70,43 +73,6 @@ namespace StockManager.WF
                         if (reader.IsDBNull(1) == false)
                         {
                             productCategory.Label = reader.GetString(1);  //Lecture d'une chaîne
-                        }
-                    }
-                }
-            }
-        }
-        private void GetProduct(SqlConnection sqlConnection)
-        {
-            using (SqlCommand command = sqlConnection.CreateCommand())
-            {
-                //On préciser le texte de la commande
-                command.CommandText = "SELECT Identifier, Nom , Reference , IdentifierProductCategory  FROM Product";
-
-                //On exécute la requête et on obtient un SqlDataReader
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    //Tant qu'il y a des résultats, on passe au suivant
-                    while (reader.Read())
-                    {
-                        Product product = new Product();
-                        _Product.Add(product);
-                        //0 : Identifier
-                        //1 : Label
-
-                        product.Identifier = reader.GetInt32(0); //Lecture d'un entier
-                        //Pour les champs NULL, il faut tester avant avec IsDBNull()
-                        if (!reader.IsDBNull(1))
-                        {
-                            product.NameProduct = reader.GetString(1);  //Lecture d'une chaîne
-                        }
-                        if (!reader.IsDBNull(2))
-                        {
-                            product.ReferenceProduct = reader.GetString(2);  //Lecture d'une chaîne
-                        }
-                        if (!reader.IsDBNull(3))
-                        {
-                            product.IdentifierProductCategory = _ProductCategory
-                                .First(productCategory => productCategory.Identifier == reader.GetInt32(3));
                         }
                     }
                 }

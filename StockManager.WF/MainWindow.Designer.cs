@@ -40,7 +40,7 @@
             // buttonManageCategory
             // 
             this.buttonManageCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonManageCategory.Location = new System.Drawing.Point(271, 70);
+            this.buttonManageCategory.Location = new System.Drawing.Point(241, 64);
             this.buttonManageCategory.Name = "buttonManageCategory";
             this.buttonManageCategory.Size = new System.Drawing.Size(210, 40);
             this.buttonManageCategory.TabIndex = 0;
@@ -53,11 +53,11 @@
             // buttonManageExitStock
             // 
             this.buttonManageExitStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonManageExitStock.Location = new System.Drawing.Point(271, 280);
+            this.buttonManageExitStock.Location = new System.Drawing.Point(241, 274);
             this.buttonManageExitStock.Name = "buttonManageExitStock";
             this.buttonManageExitStock.Size = new System.Drawing.Size(210, 40);
             this.buttonManageExitStock.TabIndex = 1;
-            this.buttonManageExitStock.Text = "Gestion sorties stock";
+            this.buttonManageExitStock.Text = "Gestion sorties stocks";
             this.buttonManageExitStock.UseVisualStyleBackColor = true;
             this.buttonManageExitStock.Click += new System.EventHandler(this.buttonManageExitStock_Click);
             this.buttonManageExitStock.MouseEnter += new System.EventHandler(this.buttonManageExitStock_MouseEnter);
@@ -66,7 +66,7 @@
             // buttonManageEntryStock
             // 
             this.buttonManageEntryStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonManageEntryStock.Location = new System.Drawing.Point(271, 210);
+            this.buttonManageEntryStock.Location = new System.Drawing.Point(241, 204);
             this.buttonManageEntryStock.Name = "buttonManageEntryStock";
             this.buttonManageEntryStock.Size = new System.Drawing.Size(210, 40);
             this.buttonManageEntryStock.TabIndex = 2;
@@ -79,7 +79,7 @@
             // buttonManageProduct
             // 
             this.buttonManageProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonManageProduct.Location = new System.Drawing.Point(271, 140);
+            this.buttonManageProduct.Location = new System.Drawing.Point(241, 134);
             this.buttonManageProduct.Name = "buttonManageProduct";
             this.buttonManageProduct.Size = new System.Drawing.Size(210, 40);
             this.buttonManageProduct.TabIndex = 3;
@@ -92,7 +92,7 @@
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.Location = new System.Drawing.Point(706, 338);
+            this.buttonClose.Location = new System.Drawing.Point(607, 306);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 4;
@@ -105,7 +105,7 @@
             this.labelMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelMain.AutoSize = true;
             this.labelMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMain.Location = new System.Drawing.Point(98, 9);
+            this.labelMain.Location = new System.Drawing.Point(49, 9);
             this.labelMain.Name = "labelMain";
             this.labelMain.Size = new System.Drawing.Size(602, 25);
             this.labelMain.TabIndex = 5;
@@ -116,7 +116,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(793, 373);
+            this.ClientSize = new System.Drawing.Size(694, 341);
             this.Controls.Add(this.labelMain);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonManageProduct);
@@ -126,7 +126,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(809, 412);
+            this.MaximumSize = new System.Drawing.Size(710, 380);
+            this.MinimumSize = new System.Drawing.Size(710, 380);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StockManager";

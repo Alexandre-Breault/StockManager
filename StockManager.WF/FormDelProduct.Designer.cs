@@ -32,6 +32,7 @@
             this.buttonDel = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBoxProduct = new System.Windows.Forms.ListBox();
+            this.buttonCloseProd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonClose
@@ -43,7 +44,6 @@
             this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "Quitter";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // buttonDel
             // 
@@ -53,6 +53,7 @@
             this.buttonDel.TabIndex = 6;
             this.buttonDel.Text = "Supprimer";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // textBox1
             // 
@@ -68,12 +69,24 @@
             this.listBoxProduct.Name = "listBoxProduct";
             this.listBoxProduct.Size = new System.Drawing.Size(111, 264);
             this.listBoxProduct.TabIndex = 8;
+            this.listBoxProduct.SelectedIndexChanged += new System.EventHandler(this.listBoxProduct_SelectedIndexChanged);
+            // 
+            // buttonCloseProd
+            // 
+            this.buttonCloseProd.Location = new System.Drawing.Point(235, 246);
+            this.buttonCloseProd.Name = "buttonCloseProd";
+            this.buttonCloseProd.Size = new System.Drawing.Size(75, 23);
+            this.buttonCloseProd.TabIndex = 9;
+            this.buttonCloseProd.Text = "Quitter";
+            this.buttonCloseProd.UseVisualStyleBackColor = true;
+            this.buttonCloseProd.Click += new System.EventHandler(this.buttonCloseProd_Click);
             // 
             // FormDelProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 281);
+            this.Controls.Add(this.buttonCloseProd);
             this.Controls.Add(this.listBoxProduct);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonDel);
@@ -94,5 +107,6 @@
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listBoxProduct;
+        private System.Windows.Forms.Button buttonCloseProd;
     }
 }

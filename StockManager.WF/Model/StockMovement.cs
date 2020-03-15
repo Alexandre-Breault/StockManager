@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace StockManager.WF.Model
 {
-    class StockMovement
+    public class StockMovement
     {
         #region Attributes
         /// <summary>
         /// identifiant du mouvement dans le stock
         /// </summary>
         private int _Identifier;
+
         /// <summary>
-        /// Date du mouvement  dans le stock
+        /// Date du mouvement dans le stock
         /// </summary>
         private DateTime? _Date;
+
         /// <summary>
         /// Numéro de l'employé à l'origine du mouvement dans le stock
         /// </summary>
         private string _EmployeeCode;
+
         /// <summary>
         /// Entrée dans le stock
         /// </summary>
